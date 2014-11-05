@@ -1,0 +1,49 @@
+drop table data;
+drop table series;
+drop table state;
+drop table category;
+
+
+
+CREATE TABLE state (
+    id INT NOT NULL,
+    name CHAR(64),
+    region_id INT,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE category (
+    id INT NOT NULL,
+    name CHAR(64),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE series (
+    id INT NOT NULL,
+    name CHAR(64),
+    units INT,
+    description CHAR(128),
+    PRIMARY KEY (id),
+
+    state_id INT,
+    category_id INT,
+
+    FOREIGN KEY (state_id)
+    	REFERENCES state(id)
+    	ON DELETE CASCADE,
+
+    FOREIGN KEY (category_id)
+    	REFERENCES category(id)
+    	ON DELETE CASCADE
+);
+
+CREATE TABLE data (
+    id INT NOT NULL,
+    date DATE,
+    value INT,
+
+    series_id INT,
+    FOREIGN KEY (series_id)
+    	REFERENCES series(id)
+    	ON DELETE CASCADE
+);
