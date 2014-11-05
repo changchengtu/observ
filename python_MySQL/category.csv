@@ -1,0 +1,10 @@
+category_id,name,des,group_id,group_type
+1,ind,Industrial Demand,1,demand
+2,res,Residentail Demand,1,demand
+3,com,Commercial Demand,1,demand
+4,pow,Power Plant Demand,1,demand
+5,prd,Marketed Production,2,production
+6,lng,LNG,3,other
+7,imp,Imports,3,other
+8,exp,Exports,3,other
+9,oth,Other,3,other
