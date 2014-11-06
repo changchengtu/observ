@@ -6,9 +6,10 @@ drop table category;
 
 
 CREATE TABLE state (
-    id INT NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
     name CHAR(64),
     region_id INT,
+    eia_category_id INT,
     PRIMARY KEY (id)
 );
 
